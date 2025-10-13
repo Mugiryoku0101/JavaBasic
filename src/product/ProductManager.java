@@ -1,12 +1,12 @@
-package product.manegement;
+package product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsManager {
+public class ProductManager implements Searchable {
 	private List<Product> products;
 	
-	public ProductsManager() {
+	public ProductManager() {
 		this.products = new ArrayList<>();
 	}
 	public void addProduct(Product product) {
@@ -37,4 +37,20 @@ public class ProductsManager {
 				System.out.println(product);
 				}
 			}
+		public List<Product> getAllProducts() {
+			return products;
 		}
+		
+		@Override
+		public List<Product> search(String keyword) {
+			List<Product> result = new ArrayList<>();
+			
+			for (Product product : products) {
+				if (product.getName().toLowerCase().contains(keyword.toLowerCase())) {
+					result.add(product);
+				}
+			}
+			return result;
+		}
+		
+     }

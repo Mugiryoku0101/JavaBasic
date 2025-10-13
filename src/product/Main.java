@@ -1,11 +1,14 @@
-package product.manegement;
+package product;
+
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
-		ProductsManager manager = new ProductsManager();
+		ProductManager manager = new ProductManager();
 		
 		manager.addProduct(new Product(1, "冷蔵庫", 50000, 10));
-		manager.addProduct(new Product(2, "ソファ", 30000, 5));
+		DiscountedProduct sofa = new DiscountedProduct(2, "ソファ", 30000, 5, 0.3);
+		manager.addProduct(sofa);
 		manager.addProduct(new Product(3, "米", 2000, 3));
 		manager.addProduct(new Product(4, "小説", 1500, 4));
 		manager.addProduct(new Product(5, "Tシャツ", 1500, 5));
@@ -24,6 +27,17 @@ public class Main {
 	            System.out.println(rice);
 	        } else {
 	            System.out.println("商品が見つかりませんでした");
+	        }
+		 
+		 System.out.println("--商品名「ソファ」の情報と割引率30％の情報を表示する--");
+	       List<Product> sofaResult = manager.search("ソファ");
+	       for (Product product : sofaResult) {
+	    	   System.out.println(product);
+	       }
+	       System.out.println("--商品名「Tシャツ」を検索して表示する--");
+	       List<Product> tshirtResult = manager.search("Tシャツ");
+	       for (Product product : tshirtResult) {
+	    	   System.out.println(product);
 	        }
 	}
 
