@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductManager implements Searchable {
-	private List<Product> products;
+	private List<Product_bak> products;
 	
 	public ProductManager() {
 		this.products = new ArrayList<>();
 	}
-	public void addProduct(Product product) {
+	public void addProduct(Product_bak product) {
 		products.add(product);
 		System.out.println("商品を追加しました：" + product.getName());
 	}
 	public void removeProduct(int id) {
 		for (int i = 0; i < products.size(); i++) {
 			if (products.get(i).getId() == id) {
-				Product removed = products.remove(i);
+				Product_bak removed = products.remove(i);
 				System.out.println("商品を削除しました；" + removed.getName());
 				return;
 			}
@@ -24,8 +24,8 @@ public class ProductManager implements Searchable {
 		
 			System.out.println("ID=" + id + "の商品が見つかりませんでした");
 		}
-		public Product getProductByName(String name) {
-			for (Product product : products) {
+		public Product_bak getProductByName(String name) {
+			for (Product_bak product : products) {
 				if (product.getName().equals(name)) {
 					return product;
 				}
@@ -33,19 +33,19 @@ public class ProductManager implements Searchable {
 			return null;
 		}
 		public void displayAllProducts() {
-			for (Product product : products) {
+			for (Product_bak product : products) {
 				System.out.println(product);
 				}
 			}
-		public List<Product> getAllProducts() {
+		public List<Product_bak> getAllProducts() {
 			return products;
 		}
 		
 		@Override
-		public List<Product> search(String keyword) {
-			List<Product> result = new ArrayList<>();
+		public List<Product_bak> search(String keyword) {
+			List<Product_bak> result = new ArrayList<>();
 			
-			for (Product product : products) {
+			for (Product_bak product : products) {
 				if (product.getName().toLowerCase().contains(keyword.toLowerCase())) {
 					result.add(product);
 				}

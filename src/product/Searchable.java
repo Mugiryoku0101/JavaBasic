@@ -3,5 +3,5 @@ package product;
 import java.util.List;
 
 public interface Searchable {
-	List<Product> search(String keyword);
+	List<Product_bak> search(String keyword);
 }

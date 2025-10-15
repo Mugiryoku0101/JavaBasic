@@ -1,6 +1,6 @@
 package product;
 
-public class DiscountedProduct extends Product {
+public class DiscountedProduct extends Product_bak {
 	private double discountRate;
 	
 	public DiscountedProduct(int id, String name, int price, int stock, double discountRate) {
