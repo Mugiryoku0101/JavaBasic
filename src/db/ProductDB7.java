@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ProductDB {
+public class ProductDB7 {
 	
 		private static final String URL = "jdbc:mysql://localhost:3306/product_management";
 		private static final String USER = "root";
@@ -103,7 +103,7 @@ public void getAllProducts() {
 }
 
 public static void main(String[] args) {
-	ProductDB productDB = new ProductDB();
+	ProductDB7 productDB = new ProductDB7();
 	
 	System.out.println("--- パート1： データベース接続テスト ---");
 	productDB.testConnection();
